@@ -13,7 +13,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="191dp"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/car1" />
 
     <EditText
         android:inputType="text"
