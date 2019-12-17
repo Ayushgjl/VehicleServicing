@@ -18,11 +18,9 @@
     <EditText
         android:inputType="text"
         android:id="@+id/etUser"
-
         android:textSize="30sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:hint="Username"/>
 
     <EditText
@@ -31,14 +29,13 @@
         android:textSize="30sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:hint="Password"
         />
 
     <Button
         android:id="@+id/btnLohin"
         android:text="Login"
-        android:shadowColor="@color/colorPrimary"
+        android:shadowColor="@color/colorPrimaryDark"
         android:textColor="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
