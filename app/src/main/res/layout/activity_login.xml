@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+    android:layout_marginRight="15sp"
+    android:layout_marginLeft="15sp"
+    android:background="#FFFACD"
     tools:context=".MainActivity">
 
 
     <ImageView
         android:id="@+id/imageView"
+        android:layout_marginTop="75sp"
         android:layout_width="match_parent"
         android:layout_height="191dp"
         app:srcCompat="@drawable/car1" />
@@ -18,7 +21,9 @@
     <EditText
         android:inputType="text"
         android:id="@+id/etUser"
+        android:layout_marginTop="25sp"
         android:textSize="30sp"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"/>
@@ -27,6 +32,8 @@
         android:inputType="textPassword"
         android:id="@+id/etPwd"
         android:textSize="30sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -35,11 +42,23 @@
     <Button
         android:id="@+id/btnLogin"
         android:text="Login"
+        android:layout_marginTop="10sp"
         android:shadowColor="@color/colorPrimaryDark"
-        android:textColor="@color/colorAccent"
+        android:textColor="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="35sp"/>
+
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:textSize="20sp"
+        android:hint="Create Account"
+        android:gravity="center"
+
+        />
 
 
 
