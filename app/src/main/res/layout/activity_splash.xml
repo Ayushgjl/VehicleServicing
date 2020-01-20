@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFFACD"
     android:gravity="center"
     tools:context=".SplashActivity">
 
@@ -17,7 +18,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome To My APP"
+        android:text="Welcome To Vehicle Servicing APP"
         android:layout_marginTop="22sp"
         android:gravity="center"
         android:textSize="22sp"/>
