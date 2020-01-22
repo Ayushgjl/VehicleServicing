@@ -1,17 +1,19 @@
 package com.ayushgjl.vehicleservicing;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText etUser, etpwd;
     Button btnLogin;
+    TextView tvRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,36 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnLogin = findViewById(R.id.btnLogin);
 
         btnLogin.setOnClickListener(this);
+        tvRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                login();
+            }
+        });
+    }
+
+    private void login() {
+//        String email=etUser.getText().toString();
+//        String password=etpwd.getText().toString();
+//
+//        LoginBLL loginBLL=new LoginBLL();
+//
+//        StrictModeClass.StrictMode();
+//        if (loginBLL.checkUser(email,password)){
+//            Intent intent=new Intent(LoginActivity.this, DashboardActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }else {
+//            Toast.makeText(this, "email and password is incorrect", Toast.LENGTH_LONG).show();
+//            etUser.requestFocus();
+//        }
     }
 
     @Override
