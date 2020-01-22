@@ -6,8 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.ayushgjl.vehicleservicing.bll.LoginBLL;
+import com.ayushgjl.vehicleservicing.strictmode.StrictModeClass;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -41,20 +45,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void login() {
-//        String email=etUser.getText().toString();
-//        String password=etpwd.getText().toString();
-//
-//        LoginBLL loginBLL=new LoginBLL();
-//
-//        StrictModeClass.StrictMode();
-//        if (loginBLL.checkUser(email,password)){
-//            Intent intent=new Intent(LoginActivity.this, DashboardActivity.class);
-//            startActivity(intent);
-//            finish();
-//        }else {
-//            Toast.makeText(this, "email and password is incorrect", Toast.LENGTH_LONG).show();
-//            etUser.requestFocus();
-//        }
+        String email=etUser.getText().toString();
+        String password=etpwd.getText().toString();
+
+        LoginBLL loginBLL=new LoginBLL();
+
+        StrictModeClass.StrictMode();
+        if (loginBLL.checkUser(email,password)){
+            Intent intent=new Intent(LoginActivity.this, DashboardActivity.class);
+            startActivity(intent);
+            finish();
+        }else {
+            Toast.makeText(this, "email and password is incorrect", Toast.LENGTH_LONG).show();
+            etUser.requestFocus();
+        }
     }
 
     @Override
