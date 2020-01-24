@@ -13,9 +13,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_marginTop="75sp"
+        android:layout_marginTop="25sp"
         android:layout_width="match_parent"
-        android:layout_height="191dp"
+        android:layout_height="150dp"
         app:srcCompat="@drawable/car1" />
 
     <EditText
@@ -50,15 +50,29 @@
         android:textSize="35sp"/>
 
     <TextView
-        android:id="@+id/tvRegister"
-        android:layout_width="match_parent"
+        android:id="@+id/tvregister1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15sp"
-        android:textSize="20sp"
-        android:hint="Create Account"
-        android:gravity="center"
+        android:layout_margin="15dp"
+        android:text="Create Account"
+        android:layout_gravity="center"
+        android:textColor="#800000"
+        android:textSize="20sp" />
 
-        />
+    <TextView
+        android:id="@+id/tvForgot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_gravity="center"
+        android:text="Forgot Password"
+        android:textColor="#800000"
+        android:textSize="20sp" />
+
+
+
+
+
 
 
 
