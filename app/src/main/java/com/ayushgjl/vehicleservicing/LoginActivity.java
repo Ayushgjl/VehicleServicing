@@ -1,8 +1,11 @@
 package com.ayushgjl.vehicleservicing;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,22 +16,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.ayushgjl.vehicleservicing.bll.LoginBLL;
 import com.ayushgjl.vehicleservicing.strictmode.StrictModeClass;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity  {
 
-    EditText etUser, etpwd;
-    Button btnLogin;
     TextView tvRegister;
+    EditText etEmail,etPassword;
+    Button btnLogin;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getSupportActionBar().hide();
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
 
-        etUser = findViewById(R.id.etUser);
-        etpwd = findViewById(R.id.etPwd);
-        btnLogin = findViewById(R.id.btnLogin);
+        etEmail=findViewById(R.id.etemail);
+        etPassword=findViewById(R.id.etpassword);
+        btnLogin=findViewById(R.id.btnlogin);
+        tvRegister= findViewById(R.id.tvregister1);
 
-        btnLogin.setOnClickListener(this);
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,38 +50,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 login();
             }
         });
+
     }
 
-    private void login() {
-        String email=etUser.getText().toString();
-        String password=etpwd.getText().toString();
+    private void login(){
+        String email=etEmail.getText().toString();
+        String password=etPassword.getText().toString();
 
         LoginBLL loginBLL=new LoginBLL();
 
         StrictModeClass.StrictMode();
         if (loginBLL.checkUser(email,password)){
-            Intent intent=new Intent(LoginActivity.this, DashboardActivity.class);
+            Intent intent=new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }else {
             Toast.makeText(this, "email and password is incorrect", Toast.LENGTH_LONG).show();
-            etUser.requestFocus();
+            etEmail.requestFocus();
         }
     }
 
-    @Override
-    public void onClick(View v) {
 
-        if(v.getId() == R.id.btnLogin){
-            String username1 = etUser.getText().toString();
-            String password1 = etpwd.getText().toString();
-
-            if(username1.equals("admin")  && password1.equals("admin") ) {
-                Intent intent = new Intent(this, DashboardActivity.class);
-                startActivity(intent);
-            }
-
-        }
-
-    }
 }

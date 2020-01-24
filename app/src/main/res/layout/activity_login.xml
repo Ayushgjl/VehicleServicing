@@ -10,70 +10,75 @@
     android:background="#FFFACD"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login to Vehicle Servicing APP"
+        android:layout_marginTop="15sp"
+        android:textColor="#800000"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_marginTop="25sp"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="191dp"
         app:srcCompat="@drawable/car1" />
 
     <EditText
-        android:inputType="text"
-        android:id="@+id/etUser"
-        android:layout_marginTop="25sp"
-        android:textSize="30sp"
-        android:gravity="center"
+        android:id="@+id/etemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username"/>
+        android:hint="Username"
+        android:inputType="textEmailAddress"
+        android:textSize="25sp"
+        />
 
     <EditText
-        android:inputType="textPassword"
-        android:id="@+id/etPwd"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:layout_marginTop="10sp"
+        android:id="@+id/etpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="25sp"
         />
 
+
     <Button
-        android:id="@+id/btnLogin"
-        android:text="Login"
-        android:layout_marginTop="10sp"
-        android:shadowColor="@color/colorPrimaryDark"
-        android:textColor="#FFFFFF"
+        android:id="@+id/btnlogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="35sp"/>
-
-    <TextView
-        android:id="@+id/tvregister1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="Create Account"
-        android:layout_gravity="center"
-        android:textColor="#800000"
-        android:textSize="20sp" />
+        android:background="@drawable/buttonblue"
+        android:text="Login"
+        android:textSize="25sp"
+        android:textColor="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/tvForgot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:layout_gravity="center"
-        android:text="Forgot Password"
-        android:textColor="#800000"
-        android:textSize="20sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/tvForgot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Forgot Password"
+            android:textColor="#800000"
+            android:textSize="20sp" />
 
-
-
-
-
+        <TextView
+            android:id="@+id/tvregister1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Create Account"
+            android:textColor="#800000"
+            android:textSize="20sp" />
+    </LinearLayout>
 
 
 
