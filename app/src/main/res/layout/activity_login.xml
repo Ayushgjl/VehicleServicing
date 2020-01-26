@@ -5,25 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginRight="15sp"
-    android:layout_marginLeft="15sp"
-    android:background="#FFFACD"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login to Vehicle Servicing APP"
-        android:layout_marginTop="15sp"
-        android:textColor="#800000"
-        android:gravity="center"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_marginTop="25sp"
+        android:layout_marginTop="75sp"
         android:layout_width="match_parent"
         android:layout_height="191dp"
         app:srcCompat="@drawable/car1" />
@@ -33,6 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
+        android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+        android:textColorHint="#DC143C"
         android:inputType="textEmailAddress"
         android:textSize="25sp"
         />
@@ -42,6 +33,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
+        android:textColorHint="#DC143C"
+        android:drawableLeft="@drawable/ic_lock_black_24dp"
         android:inputType="textPassword"
         android:textSize="25sp"
         />
@@ -55,11 +48,12 @@
         android:background="@drawable/buttonblue"
         android:text="Login"
         android:textSize="25sp"
-        android:textColor="#FFFFFF" />
+        android:textColor="#00BFFF" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/tvForgot"
@@ -67,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:text="Forgot Password"
-            android:textColor="#800000"
+            android:textColor="#FFDAB9"
             android:textSize="20sp" />
 
         <TextView
@@ -75,8 +69,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
+
             android:text="Create Account"
-            android:textColor="#800000"
+            android:textColor="#FFDAB9"
             android:textSize="20sp" />
     </LinearLayout>
 
