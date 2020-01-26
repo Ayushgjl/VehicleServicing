@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     android:background="@drawable/background"
     tools:context=".MainActivity">
@@ -12,7 +13,6 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_marginTop="75sp"
         android:layout_width="match_parent"
         android:layout_height="191dp"
         app:srcCompat="@drawable/car1" />
@@ -21,8 +21,9 @@
         android:id="@+id/etemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username"
-        android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+        android:layout_marginTop="25sp"
+        android:hint="Email"
+        android:drawableLeft="@drawable/ic_email_black_24dp"
         android:textColorHint="#DC143C"
         android:inputType="textEmailAddress"
         android:textSize="25sp"
@@ -33,6 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
+        android:layout_marginTop="15sp"
         android:textColorHint="#DC143C"
         android:drawableLeft="@drawable/ic_lock_black_24dp"
         android:inputType="textPassword"
