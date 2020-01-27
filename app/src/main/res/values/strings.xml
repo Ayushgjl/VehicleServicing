@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">Vehicle Servicing</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">About Us</string>
