@@ -23,10 +23,7 @@
             android:icon="@drawable/ic_location_on_black_24dp"
             android:title="@string/menu_send" />
 
-        <item
-            android:id="@+id/nav_hash"
-            android:icon="@drawable/ic_location_on_black_24dp"
-            android:title="@string/menu_send" />
+
 
         <item
             android:id="@+id/nav_slideshow"
