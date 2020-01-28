@@ -6,19 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.ayushgjl.vehicleservicing.R;
 
 public class GalleryFragment extends Fragment {
 
-    WebView webview;
+  private   WebView Webview;
 
     private GalleryViewModel galleryViewModel;
 
@@ -26,13 +23,13 @@ public class GalleryFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         galleryViewModel =
                 ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        webview = root.findViewById(R.id.webview);
+        View view = inflater.inflate(R.layout.fragment_gallery, container, false);
+        Webview = view.findViewById(R.id.Webview);
 
-        webview.getSettings().setJavaScriptEnabled(true);
-        webview.setWebViewClient(new WebViewClient());
-        webview.loadUrl("https://www.budgetdirect.com.au/blog/car-maintenance.html");
+        Webview.getSettings().setJavaScriptEnabled(true);
+        Webview.setWebViewClient(new WebViewClient());
+        Webview.loadUrl("https://www.budgetdirect.com.au/blog/car-maintenance.html");
 
-        return root;
+        return view;
     }
 }
