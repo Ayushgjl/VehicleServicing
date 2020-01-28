@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity  {
 
         StrictModeClass.StrictMode();
         if (loginBLL.checkUser(email,password)){
-            Intent intent=new Intent(LoginActivity.this, MainActivity.class);
+            Intent intent=new Intent(LoginActivity.this, Main2Activity.class);
             startActivity(intent);
             finish();
         }else {
