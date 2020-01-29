@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Vehicle Servicing</string>
     <string name="menu_home">Home</string>
+    <style name="menu_history">History</style>
     <string name="menu_gallery">About Us</string>
     <string name="menu_slideshow">Location </string>
     <string name="title_activity_maps">Map</string>
