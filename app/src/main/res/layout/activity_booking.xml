@@ -5,81 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginLeft="10sp"
-    android:layout_marginRight="10sp"
     tools:context=".BookingActivity">
 
     <TextView
         android:id="@+id/book"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Book Your Servicing Center"
+        android:text="Book Your Car Servicing Here !!"
         android:textSize="20sp"
         android:textColor="#800000"
         android:gravity="center"
-        android:layout_marginTop="15sp"
+        android:layout_marginTop="10sp"
         />
 
     <EditText
-        android:id="@+id/full"
+        android:id="@+id/fullname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Full Name"
-        android:layout_marginTop="15sp"
+
         />
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email Address"
-        android:layout_marginTop="15sp"
-        />
 
     <EditText
         android:id="@+id/contact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Contact Number"
-        android:layout_marginTop="15sp"
-        />
 
-<AutoCompleteTextView
-    android:id="@+id/vtype"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Select Your Vehicle Model"
-    android:completionThreshold="1"
-    android:layout_marginTop="15sp"
-    android:completionHint="Select Your Vehicle Type"
-    />
-
-    <AutoCompleteTextView
-        android:id="@+id/ctype"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Select Your Car "
-        android:completionThreshold="1"
-        android:layout_marginTop="15sp"
-        android:completionHint="Select Your Car"
-        />
-
-    <AutoCompleteTextView
-        android:id="@+id/stype"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Select Your Servicing "
-        android:completionThreshold="1"
-        android:layout_marginTop="15sp"
-        android:completionHint="Select Your Car"
         />
 
     <EditText
-        android:id="@+id/cnum"
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your Location"
+
+        />
+    <EditText
+        android:id="@+id/vehiclenum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Your Vehicle Number "
-        android:layout_marginTop="15sp"
+
         />
 
     <EditText
@@ -87,78 +55,96 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Problems On Vehicle"
-        android:layout_marginTop="15sp"
+
         />
 
 
+    <TextView
+        android:id="@+id/vehicletype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Your Car Model"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/spin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/cartype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Your Car Type"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spin1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/servicingtype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Your Servicing"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spin2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Select Date and Time"
+        android:textSize="20sp"
+        />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="187dp"
-            android:layout_height="wrap_content"
-            android:hint="Select Date"
-            android:textSize="21sp"
-            />
 
         <Button
             android:id="@+id/btndate"
-            android:layout_width="177dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60sp"
             android:background="@drawable/buttonblue"
-            android:textColorHint="#"
-            android:hint="Select Date Picker" />
+            android:text="Select Date "
+            android:textColorHint="#000000" />
 
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15sp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="187dp"
-            android:layout_height="wrap_content"
-            android:hint="Select Date"
-            android:textSize="21sp"
-            />
 
         <Button
             android:id="@+id/btntime"
-            android:layout_width="177dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60sp"
+            android:layout_marginLeft="30sp"
             android:background="@drawable/buttonblue"
-            android:hint="Select Time Picker"
-            android:textColorHint="#"
-            />
+            android:text="Select Time "
+            android:textColorHint="#000000" />
 
 
     </LinearLayout>
 
     <Button
         android:id="@+id/btnbook"
-        android:layout_marginTop="15sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        android:background="@drawable/roundbutton"
         android:hint="Book Now"
         android:textColorHint="#800000"
         android:textSize="20sp"
-        android:background="@drawable/roundbutton"
 
         />
-
-
-
-
 
 
 </LinearLayout>

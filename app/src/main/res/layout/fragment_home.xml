@@ -36,11 +36,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Re-invent your ride!"
+            android:text="Sharing smile through vehicle caring."
             android:textStyle="bold"
             android:layout_marginTop="15sp"
             android:layout_gravity="center"
             android:textSize="20sp"/>
+
+
 
 
 
