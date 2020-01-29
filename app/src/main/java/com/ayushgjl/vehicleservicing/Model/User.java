@@ -1,20 +1,44 @@
 package com.ayushgjl.vehicleservicing.Model;
 
 public class User {
-    public String name,email, phone;
+    private String firstName;
+    private String lastName;
+    private String contact;
+    private String email;
+    private String password;
+    private String image;
 
-    public User(String name, String email, String phone) {
-        this.name = name;
+    public User(String firstName, String lastName, String contact, String email, String password, String image) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.contact = contact;
         this.email = email;
-        this.phone = phone;
+        this.password = password;
+        this.image = image;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 
     public String getEmail() {
@@ -25,11 +49,19 @@ public class User {
         this.email = email;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
