@@ -1,5 +1,6 @@
 package com.ayushgjl.vehicleservicing.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -59,12 +60,13 @@ public class HomeFragment extends Fragment {
         categoryList.add(new HomeViewModel(R.drawable.jeep));
         categoryList.add(new HomeViewModel(R.drawable.scooter));
 
-//        recyclerView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
+        recyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+
+            }
+        });
 
 
         CategoryAdapter categoryAdapter=new CategoryAdapter(getActivity(),categoryList);
