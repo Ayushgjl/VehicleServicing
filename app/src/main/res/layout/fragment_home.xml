@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="We Served"
+            android:text="Categories"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:textSize="20sp"/>
@@ -41,6 +41,9 @@
             android:layout_marginTop="15sp"
             android:layout_gravity="center"
             android:textSize="20sp"/>
+
+
+
 
 
 

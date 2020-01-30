@@ -1,9 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BikeActivity">
+    android:orientation="vertical"
+    tools:context=".BookingActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/bbook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Book Your Bike Servicing Here !!"
+        android:textSize="20sp"
+        android:textColor="#800000"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        />
+
+    <EditText
+        android:id="@+id/bfullname"
+        android:layout_marginTop="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Full Name"
+
+        />
+
+
+    <EditText
+        android:id="@+id/bcontact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contact Number"
+
+        />
+
+    <EditText
+        android:id="@+id/blocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your Location"
+
+        />
+    <EditText
+        android:id="@+id/bvehiclenum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your Bike Number "
+
+        />
+
+    <EditText
+        android:id="@+id/bproblem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Problems On your Bike"
+
+        />
+
+
+    <TextView
+        android:id="@+id/bikemodel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Your Bike Model"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/bspin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/biketype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Your Bike Type"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/bspin1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/bdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Select Date and Time"
+        android:textSize="20sp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/btnbdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonblue"
+            android:text="Select Date "
+            android:textColorHint="#000000" />
+
+
+        <Button
+            android:id="@+id/btnbtime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30sp"
+            android:background="@drawable/buttonblue"
+            android:text="Select Time "
+            android:textColorHint="#000000" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnbook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        android:background="@drawable/roundbutton"
+        android:hint="Book Now"
+        android:textColorHint="#800000"
+        android:textSize="20sp"
+
+        />
+
+
+</LinearLayout>

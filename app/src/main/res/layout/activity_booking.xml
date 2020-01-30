@@ -46,7 +46,7 @@
         android:id="@+id/vehiclenum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Your Vehicle Number "
+        android:hint="Enter Your Car Number "
 
         />
 
@@ -54,7 +54,7 @@
         android:id="@+id/problem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Problems On Vehicle"
+        android:hint="Problems On your Car"
 
         />
 
