@@ -19,7 +19,7 @@ public interface UserAPI {
     @POST("users/signup")
     Call<SignUpResponse> registerUser(@Body User users);
 
-    @FormUrlEncoded
+
     @POST("users/login")
     Call<SignUpResponse> checkUser(@Field("email") String email, @Field("password") String password);
 

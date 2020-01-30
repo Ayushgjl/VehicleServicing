@@ -1,4 +1,4 @@
-package com.ayushgjl.vehicleservicing.ui.gallery;
+package com.ayushgjl.vehicleservicing.ui.AboutUs;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

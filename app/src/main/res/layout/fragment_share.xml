@@ -1,19 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/text_share"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
+        android:hint="What is Vehicle Servicing Booking APP"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#800000"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Vehicle servicing is an online mobile application for two wheelers repair and maintenance service that promises to instantly ease your bike/scooter maintenance troubles. We’re your one-stop shop for servicing, repair and maintenance of your bike along with pick-up and delivery at your doorstep."
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#000000"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Do you do doorstep servicing?"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#800000"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="No. We take the bike or scooter at your doorstep and get the bike serviced at our own service center. However, in case of number plate and other minor fixing, we do provide doorstep servicing too."
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#000000"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="How and When can i make the payement?"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#800000"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="You can make the payment through cash on delivery to our executive who comes to deliver your bike."
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#000000"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Will Vehicle Servicer be responsible for the quality of service?"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#800000"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="YES!. the quality guaranteed by thirdwheel for servicing but as far as the parts concern that are guaranteed by different vendors like Yamaha, Honda , Hero etc."
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#000000"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Can i trust the service center?"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#800000"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Yes, you can. We work at our own service center which are reliable. Also our mechanics are well trained and specialized."
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#000000"
+        />
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

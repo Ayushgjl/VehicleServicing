@@ -13,15 +13,25 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.ayushgjl.vehicleservicing.ui.gallery.GalleryFragment"
+        android:name="com.ayushgjl.vehicleservicing.ui.AboutUs.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.ayushgjl.vehicleservicing.ui.slideshow.SlideshowFragment"
+        android:name="com.ayushgjl.vehicleservicing.ui.Location.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.ayushgjl.vehicleservicing.ui.FAQ.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+    <fragment
+        android:id="@+id/nav_tools"
+        android:name="com.ayushgjl.vehicleservicing.ui.PrivacyandPolicy.ToolsFragment"
+        android:label="@string/menu_tools"
+        tools:layout="@layout/fragment_tools" />
 
 
 </navigation>

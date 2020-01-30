@@ -6,6 +6,9 @@
 
     <string name="menu_gallery">About Us</string>
     <string name="menu_slideshow">Location </string>
+    <string name="menu_tools">Privacy and Policy</string>
+    <string name="menu_share">FAQ</string>
+    <string name="menu_send">Logout</string>
     <string name="title_activity_maps">Map</string>
 
     <!--    <string name="menu_tools">Tools</string>-->
@@ -22,7 +25,5 @@
     <!--    <string name="menu_home">Vehicles Servicing</string>-->
     <!--    <string name="menu_gallery">About Us</string>-->
     <!--    <string name="menu_slideshow">Contact Us</string>-->
-    <!--    <string name="menu_tools">Tools</string>-->
-    <!--    <string name="menu_share">Share</string>-->
-    <!--    <string name="menu_send">Send</string>-->
+
 </resources>

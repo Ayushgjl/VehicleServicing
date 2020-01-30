@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="First Name"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#800000"
         android:drawableLeft="@drawable/ic_account_circle_black_24dp"
         android:textStyle="bold"
         android:textSize="25sp"
@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_account_circle_black_24dp"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#800000"
         android:hint="Last Name"
         android:textStyle="bold"
         android:textSize="25sp"
@@ -43,13 +43,13 @@
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_contact_phone_black_24dp"
         android:hint="Contact Number"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#800000"
         android:textStyle="bold"
         android:textSize="25sp"
         />
     <EditText
         android:id="@+id/etemail"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#800000"
         android:drawableLeft="@drawable/ic_email_black_24dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
         android:textStyle="bold"
         android:inputType="textPassword"
         android:textSize="25sp"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#800000"
         />
     <EditText
         android:id="@+id/etrepassword"
@@ -78,7 +78,7 @@
         android:textStyle="bold"
         android:inputType="textPassword"
         android:textSize="25sp"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#800000"
         />
 
     <Button
@@ -89,7 +89,7 @@
         android:background="@drawable/buttonblue"
         android:text="Register"
         android:textSize="25sp"
-        android:textColor="#0C0901" />
+        android:textColor="#800000" />
 
     <TextView
         android:layout_width="match_parent"
