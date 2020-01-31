@@ -1,19 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/text_tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
+        android:hint="Use of You Personal Information"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#800000"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Before or at the time of collecting personal information, we will identify the purposes for which information is being collected. When you use our App, we store your browsing information. Our primary goal in doing so is to provide you a safe, efficient, smooth and customized experience."
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#000000"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Security of Your Personal Information"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#800000"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="We will protect personal information by reasonable security safeguards against loss or theft, as well as unauthorized access, disclosure, copying, use or modification. If you choose to buy on the App, we collect information about your buying behavior."
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#000000"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confidentiality"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#800000"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="We will make readily available to customers, information about our policies and practices related to the management of personal information.
+If vehicle servicing booking is involved in a merger, acquisition or asset sale, we will continue to ensure the confidentiality of any personal information and give affected users notice before personal information is transferred or becomes subject to a different privacy policy."
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#000000"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="General Information"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#800000"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="If you choose to post reviews and tips about vehicle care centers or post messages or leave feedback, we will collect that information you provide to us. We retain this information as necessary to resolve disputes, provide customer support and troubleshoot problems as permitted by law."
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColorHint="#000000"
+        />
+
+
+</LinearLayout>

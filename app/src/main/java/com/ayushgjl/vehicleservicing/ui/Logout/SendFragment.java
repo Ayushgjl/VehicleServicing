@@ -25,7 +25,6 @@ public class SendFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_send,container, false);
         Intent intent = new Intent(getContext(), LoginActivity.class);
         startActivity(intent);
-
         return root;
 
         
