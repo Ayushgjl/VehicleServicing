@@ -12,27 +12,24 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.ayushgjl.vehicleservicing.LoginActivity;
 import com.ayushgjl.vehicleservicing.MapsActivity;
 import com.ayushgjl.vehicleservicing.R;
 
 public class SendFragment extends Fragment {
 
-    private SendViewModel sendViewModel;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        sendViewModel =
-                ViewModelProviders.of(this).get(SendViewModel.class);
-        View view = inflater.inflate(R.layout.activity_maps, container, false);
+        View root = inflater.inflate(R.layout.fragment_send,container, false);
+        Intent intent = new Intent(getContext(), LoginActivity.class);
+        startActivity(intent);
 
-        sendViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-               Intent intent = new Intent(getActivity(), MapsActivity.class);
-               startActivity(intent);
+        return root;
 
-            }
-        });
-        return view;
+        
     }
+
+
 }
