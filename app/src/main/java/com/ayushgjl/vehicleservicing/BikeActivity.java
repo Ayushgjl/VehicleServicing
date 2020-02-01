@@ -1,8 +1,11 @@
 package com.ayushgjl.vehicleservicing;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.app.DatePickerDialog;
+import android.app.Notification;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,9 +16,13 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.ayushgjl.vehicleservicing.createchannel.CreateChannel;
+
 import java.util.Calendar;
 
 public class BikeActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+    private NotificationManagerCompat notificationManagerCompat;
+    private int counter = 1;
     private EditText bfullname, bcontact, blocation, bvehiclenum, bproblem;
     private Spinner bspin, bspin1;
     private TextView bikemodel, biketype;
@@ -26,6 +33,9 @@ public class BikeActivity extends AppCompatActivity implements DatePickerDialog.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bike);
+        notificationManagerCompat = NotificationManagerCompat.from(this);
+        CreateChannel channel = new CreateChannel(this);
+        channel.createChannel();
 
         bfullname = findViewById(R.id.bfullname);
         bcontact = findViewById(R.id.bcontact);
@@ -56,6 +66,8 @@ public class BikeActivity extends AppCompatActivity implements DatePickerDialog.
         btnbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DisplayNotification();
+                counter+= counter +1;
                 if(TextUtils.isEmpty(bfullname.getText())){
                     bfullname.setError("Please enter your fullname");
                     return;
@@ -99,6 +111,17 @@ public class BikeActivity extends AppCompatActivity implements DatePickerDialog.
             }
         });
 
+    }
+
+    private void DisplayNotification() {
+        Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_2)
+                .setSmallIcon(R.drawable.ic_phone_android_black_24dp)
+                .setContentTitle("Second Message")
+                .setContentText("Second Message body")
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+
+        notificationManagerCompat.notify(counter, notification);
     }
 
     private void loadTime() {

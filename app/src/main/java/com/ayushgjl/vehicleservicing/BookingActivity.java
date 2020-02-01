@@ -1,8 +1,11 @@
 package com.ayushgjl.vehicleservicing;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.app.DatePickerDialog;
+import android.app.Notification;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,9 +16,13 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.ayushgjl.vehicleservicing.createchannel.CreateChannel;
+
 import java.util.Calendar;
 
 public class BookingActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+    private NotificationManagerCompat notificationManagerCompat;
+    private int counter = 1;
     private EditText fullname, contact, location, vehiclenum, problem;
     private Spinner spin, spin1, spin2;
     private TextView vehicletype, cartype, servicingtype, date, time;
@@ -29,6 +36,9 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
+        notificationManagerCompat = NotificationManagerCompat.from(this);
+        CreateChannel channel = new CreateChannel(this);
+        channel.createChannel();
 
         fullname = findViewById(R.id.fullname);
         contact = findViewById(R.id.contact);
@@ -69,6 +79,7 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
         btnbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                counter+=counter+1;
                 if(TextUtils.isEmpty(fullname.getText())){
                     fullname.setError("Please enter your fullname");
                     return;
@@ -98,6 +109,10 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
                     return;
                 }
 
+         DisplayNotification();
+
+
+
             }
         });
 
@@ -113,6 +128,21 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
                 loadTime();
             }
         });
+    }
+
+
+
+
+    private void DisplayNotification() {
+        Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
+                .setSmallIcon(R.drawable.ic_border_all_black_24dp)
+                .setContentTitle("First Notification")
+                .setContentText("Succesfully Booked")
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+
+        notificationManagerCompat.notify(counter, notification);
+
     }
 
     private void loadTime() {
@@ -140,4 +170,6 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
         btndate.setText(date);
 
     }
+
+
 }

@@ -43,6 +43,7 @@
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_contact_phone_black_24dp"
         android:hint="Contact Number"
+        android:inputType="number"
         android:textColorHint="#800000"
         android:textStyle="bold"
         android:textSize="25sp"
