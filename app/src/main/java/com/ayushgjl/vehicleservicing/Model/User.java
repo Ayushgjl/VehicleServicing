@@ -1,52 +1,52 @@
 package com.ayushgjl.vehicleservicing.Model;
 
 public class User {
-    private String firstName;
-    private String lastName;
-    private String contact;
-    private String email;
+    private String firstname;
+    private String lastname;
+    private String PhoneNumber;
+    private String username;
     private String password;
     private String image;
 
-    public User(String firstName, String lastName, String contact, String email, String password, String image) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.contact = contact;
-        this.email = email;
+    public User(String firstname, String lastname, String phoneNumber, String username, String password, String image) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        PhoneNumber = phoneNumber;
+        this.username = username;
         this.password = password;
         this.image = image;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public String getContact() {
-        return contact;
+    public String getPhoneNumber() {
+        return PhoneNumber;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setPhoneNumber(String phoneNumber) {
+        PhoneNumber = phoneNumber;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

@@ -1,6 +1,7 @@
 package com.ayushgjl.vehicleservicing.bll;
 
 import com.ayushgjl.vehicleservicing.API.UserAPI;
+import com.ayushgjl.vehicleservicing.Model.username;
 import com.ayushgjl.vehicleservicing.URL.url;
 import com.ayushgjl.vehicleservicing.serverresponse.SignUpResponse;
 
@@ -13,10 +14,11 @@ public class LoginBLL {
 
     boolean isSuccess = false;
 
-    public boolean checkUser(String email, String password) {
+    public boolean checkUser(String username, String password) {
+        com.ayushgjl.vehicleservicing.Model.username Username=new username(username, password);
 
         UserAPI userAPI= url.getInstance().create(UserAPI.class);
-        Call<SignUpResponse> usersCall = userAPI.checkUser(email, password);
+        Call<SignUpResponse> usersCall = userAPI.checklogin(Username);
 
         try {
             Response<SignUpResponse> loginResponse = usersCall.execute();

@@ -38,7 +38,7 @@
         android:textSize="25sp"
         />
     <EditText
-        android:id="@+id/etnumber"
+        android:id="@+id/etPhoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_contact_phone_black_24dp"
@@ -49,12 +49,12 @@
         android:textSize="25sp"
         />
     <EditText
-        android:id="@+id/etemail"
+        android:id="@+id/etUsername"
         android:textColorHint="#800000"
         android:drawableLeft="@drawable/ic_email_black_24dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email Address"
+        android:hint="Username"
         android:inputType="textEmailAddress"
         android:textStyle="bold"
         android:textSize="25sp"

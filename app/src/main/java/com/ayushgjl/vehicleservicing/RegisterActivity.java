@@ -37,7 +37,7 @@ import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
     TextView tvBackToLogin;
-    EditText etFname,etLname,etContact,etEmail,etPassword,etRePassword;
+    EditText etFname,etLname,etContact,etUsername,etPassword,etRePassword;
     ImageView imgProfile;
     Button btnregister;
     String imagePath;
@@ -55,8 +55,8 @@ public class RegisterActivity extends AppCompatActivity {
         tvBackToLogin=findViewById(R.id.tvback);
         etFname=findViewById(R.id.etfirstname);
         etLname=findViewById(R.id.etlastname);
-        etContact=findViewById(R.id.etnumber);
-        etEmail=findViewById(R.id.etemail);
+        etContact=findViewById(R.id.etPhoneNumber);
+        etUsername=findViewById(R.id.etUsername);
         etPassword=findViewById(R.id.etpassword);
         etRePassword=findViewById(R.id.etrepassword);
         imgProfile=findViewById(R.id.imgProfile);
@@ -148,13 +148,13 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void signUp(){
-        String fname=etFname.getText().toString();
-        String lname=etLname.getText().toString();
-        String contact=etContact.getText().toString();
-        String email=etEmail.getText().toString();
+        String firstname=etFname.getText().toString();
+        String lastname=etLname.getText().toString();
+        String PhoneNumber=etContact.getText().toString();
+        String username=etUsername.getText().toString();
         String password=etPassword.getText().toString();
 
-        User users=new User(fname,lname,contact,email,password,imageName);
+        User users=new User(firstname,lastname,PhoneNumber,username,password,imageName);
 
         UserAPI userAPI= url.getInstance().create(UserAPI.class);
         Call<SignUpResponse>signUpCall=userAPI.registerUser(users);

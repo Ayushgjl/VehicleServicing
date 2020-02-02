@@ -1,6 +1,7 @@
 package com.ayushgjl.vehicleservicing.API;
 
 import com.ayushgjl.vehicleservicing.Model.User;
+import com.ayushgjl.vehicleservicing.Model.username;
 import com.ayushgjl.vehicleservicing.serverresponse.ImageResponse;
 import com.ayushgjl.vehicleservicing.serverresponse.SignUpResponse;
 
@@ -21,7 +22,7 @@ public interface UserAPI {
 
 
     @POST("users/login")
-    Call<SignUpResponse> checkUser(@Field("email") String email, @Field("password") String password);
+    Call<SignUpResponse> checklogin(@Body username Username);
 
     @Multipart
     @POST("upload")

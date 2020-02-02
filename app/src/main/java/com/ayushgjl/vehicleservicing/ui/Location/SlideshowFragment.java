@@ -8,17 +8,20 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.ayushgjl.vehicleservicing.MapsActivity;
 import com.ayushgjl.vehicleservicing.R;
 
 public class SlideshowFragment extends Fragment {
 
-
+    private SlideshowViewModel slideshowViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.activity_maps,container, false);
+        slideshowViewModel =
+                ViewModelProviders.of(this).get(SlideshowViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
         Intent intent = new Intent(getContext(), MapsActivity.class);
         startActivity(intent);
         return root;
