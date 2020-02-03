@@ -3,7 +3,7 @@
     <string name="menu_home">Home</string>
 
     <style name="menu_history">History</style>
-
+    <string name="menu_profile">Profile </string>
     <string name="menu_gallery">About Us</string>
     <string name="menu_slideshow">Location </string>
     <string name="menu_tools">Privacy and Policy</string>

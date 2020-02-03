@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.ayushgjl.vehicleservicing.BikeActivity;
+import com.ayushgjl.vehicleservicing.BookingActivity;
 import com.ayushgjl.vehicleservicing.R;
 import com.ayushgjl.vehicleservicing.ui.home.Adapter.CategoryAdapter;
 import com.ayushgjl.vehicleservicing.ui.home.Adapter.ViewPagerAdapter;
@@ -22,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerView, recyclerView1, recyclerView2;
     ViewPager viewPager;
     public static List<HomeViewModel> categoryList=new ArrayList<>();
     private int position;
@@ -60,10 +62,25 @@ public class HomeFragment extends Fragment {
         categoryList.add(new HomeViewModel(R.drawable.jeep));
         categoryList.add(new HomeViewModel(R.drawable.scooter));
 
-        recyclerView.setOnClickListener(new View.OnClickListener() {
+recyclerView1 = view.findViewById(R.id.recycler1);
+
+        recyclerView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = new Intent( getContext(), BookingActivity.class);
+                startActivity(intent);
+                return;
+
+            }
+        });
+
+        recyclerView2 = view.findViewById(R.id.recycler2);
+        recyclerView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( getContext(), BikeActivity.class);
+                startActivity(intent);
+                return;
 
             }
         });

@@ -12,6 +12,13 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.ayushgjl.vehicleservicing.ui.Profile.ProfileFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+
+    <fragment
         android:id="@+id/nav_gallery"
         android:name="com.ayushgjl.vehicleservicing.ui.AboutUs.GalleryFragment"
         android:label="@string/menu_gallery"

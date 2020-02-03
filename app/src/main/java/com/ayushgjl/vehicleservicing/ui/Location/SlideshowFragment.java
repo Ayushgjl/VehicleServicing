@@ -21,7 +21,7 @@ public class SlideshowFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         slideshowViewModel =
                 ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+        View root = inflater.inflate(R.layout.activity_maps, container, false);
         Intent intent = new Intent(getContext(), MapsActivity.class);
         startActivity(intent);
         return root;

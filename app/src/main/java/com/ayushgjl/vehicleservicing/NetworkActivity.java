@@ -29,7 +29,7 @@ public class NetworkActivity extends AppCompatActivity {
 
         if (wifi.isConnected()) {
 
-            Toast.makeText(this, "Wifi is available ", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Wifi is connected ", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(NetworkActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();

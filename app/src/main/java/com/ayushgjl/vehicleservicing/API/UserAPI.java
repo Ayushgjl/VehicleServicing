@@ -1,6 +1,7 @@
 package com.ayushgjl.vehicleservicing.API;
 
 import com.ayushgjl.vehicleservicing.Model.User;
+import com.ayushgjl.vehicleservicing.Model.Usercrud;
 import com.ayushgjl.vehicleservicing.Model.username;
 import com.ayushgjl.vehicleservicing.serverresponse.ImageResponse;
 import com.ayushgjl.vehicleservicing.serverresponse.SignUpResponse;
@@ -30,6 +31,9 @@ public interface UserAPI {
 
     @GET("users/me")
     Call<User> getUserDetails(@Header("Authorization")String token);
+
+    @GET("user/me")
+    Call<Usercrud> getupdate (@Header("Authorization") String token, @Body Usercrud usercrud );
 
     @GET("users/images")
     Call<ImageResponse> getImage(@Part MultipartBody.Part img);

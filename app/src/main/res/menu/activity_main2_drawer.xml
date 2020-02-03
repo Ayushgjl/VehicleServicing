@@ -8,6 +8,10 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_black_24dp"
             android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_chat_black_24dp"
+            android:title="@string/menu_profile" />
 
         <item
             android:id="@+id/nav_gallery"
