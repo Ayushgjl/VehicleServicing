@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ayushgjl.vehicleservicing">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -23,10 +25,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UpdateActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".UpdateActivity" />
         <activity android:name=".NetworkActivity" />
-        <activity android:name=".BikeActivity"></activity>
-        <activity android:name=".BookingActivity"></activity>
+        <activity android:name=".BikeActivity" />
+        <activity android:name=".BookingActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -54,9 +57,7 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".SplashActivity">
-
-        </activity>
+        <activity android:name=".SplashActivity" />
         <activity android:name=".MainActivity" />
     </application>
 

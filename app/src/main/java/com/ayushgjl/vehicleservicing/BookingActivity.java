@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 import com.ayushgjl.vehicleservicing.createchannel.CreateChannel;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class BookingActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
@@ -146,6 +148,12 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
     }
 
     private void loadTime() {
+        final Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+        String time = "Current Time:" + format.format(calendar.getTime());
+        btntime.setText(time);
+
+
 
 
     }

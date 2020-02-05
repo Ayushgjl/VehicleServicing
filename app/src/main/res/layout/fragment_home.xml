@@ -17,22 +17,6 @@
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="230dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Categories"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:textSize="20sp"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_height="115dp"
-            android:orientation="horizontal" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,13 +26,19 @@
             android:gravity="center"
             android:textSize="20sp"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Categories"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler1"
+            android:id="@+id/recycler"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_height="115dp"
-            android:orientation="vertical" />
+            android:orientation="horizontal" />
 
         <TextView
             android:id="@+id/tvbook"
@@ -60,13 +50,13 @@
             android:gravity="center"
             android:textSize="20sp"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler2"
-            android:layout_gravity="center"
+        <ImageView
+            android:id="@+id/carpic"
             android:layout_width="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_height="115dp"
-            android:orientation="vertical" />
+            android:layout_height="204dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/car2" />
+
 
         <TextView
             android:id="@+id/tvbook2"
@@ -77,6 +67,115 @@
             android:layout_marginTop="15sp"
             android:layout_gravity="center"
             android:textSize="20sp"/>
+
+        <ImageView
+            android:id="@+id/bikepic"
+            android:layout_width="wrap_content"
+            android:layout_height="204dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/car2" />
+
+
+            <TextView
+                android:id="@+id/social"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+
+                android:text="Contact Us for more detail!"
+                />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:layout_marginLeft="5sp"
+                android:textSize="20sp"
+                android:text="9809630319"
+                />
+
+            <TextView
+                android:id="@+id/loc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="95sp"
+                android:layout_marginTop="15sp"
+                android:text="Dillibazar, Kathmandu"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="Connect with us on Social media"
+            />
+
+
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/socialf"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/facebook" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/sociali"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/insta" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/socialt"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/twiter" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/socialy"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/youtube" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/socialv"
+                android:layout_width="80sp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/vibers" />
+
+
+        </LinearLayout>
+
 
 
 

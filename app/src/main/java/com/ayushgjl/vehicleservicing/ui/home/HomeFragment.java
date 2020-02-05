@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 ;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -26,7 +27,10 @@ import java.util.List;
 public class HomeFragment extends Fragment {
     private RecyclerView recyclerView, recyclerView1, recyclerView2;
     ViewPager viewPager;
+
+    ImageView carpic,bikepic;
     public static List<HomeViewModel> categoryList=new ArrayList<>();
+
     private int position;
     private static final int PAGE_NUM=4;
 
@@ -55,6 +59,10 @@ public class HomeFragment extends Fragment {
         runnable.run();
 
         recyclerView=view.findViewById(R.id.recycler);
+        carpic  = view.findViewById(R.id.carpic);
+        bikepic = view.findViewById(R.id.bikepic);
+
+
         HomeViewModel homeViewModel=new HomeViewModel(R.drawable.splash);
         categoryList=homeViewModel.getListcategory();
         categoryList.add(new HomeViewModel(R.drawable.car));
@@ -62,28 +70,7 @@ public class HomeFragment extends Fragment {
         categoryList.add(new HomeViewModel(R.drawable.jeep));
         categoryList.add(new HomeViewModel(R.drawable.scooter));
 
-recyclerView1 = view.findViewById(R.id.recycler1);
 
-        recyclerView1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent( getContext(), BookingActivity.class);
-                startActivity(intent);
-                return;
-
-            }
-        });
-
-        recyclerView2 = view.findViewById(R.id.recycler2);
-        recyclerView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent( getContext(), BikeActivity.class);
-                startActivity(intent);
-                return;
-
-            }
-        });
 
 
         CategoryAdapter categoryAdapter=new CategoryAdapter(getActivity(),categoryList);
@@ -91,9 +78,25 @@ recyclerView1 = view.findViewById(R.id.recycler1);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
 
 
+        carpic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BookingActivity.class);
+                startActivity(intent);
+            }
+        });
 
-
+        bikepic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BikeActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
+
+
+
 
     }
 }

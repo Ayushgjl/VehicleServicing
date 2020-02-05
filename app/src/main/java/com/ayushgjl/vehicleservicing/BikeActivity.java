@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.ayushgjl.vehicleservicing.createchannel.CreateChannel;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class BikeActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
@@ -125,6 +126,11 @@ public class BikeActivity extends AppCompatActivity implements DatePickerDialog.
     }
 
     private void loadTime() {
+
+        final Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+        String time = "Current Time:" + format.format(calendar.getTime());
+        btnbtime.setText(time);
     }
 
     private void loadDatePicker() {
