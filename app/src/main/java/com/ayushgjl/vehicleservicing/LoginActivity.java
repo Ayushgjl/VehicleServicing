@@ -1,8 +1,10 @@
 package com.ayushgjl.vehicleservicing;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -67,7 +69,11 @@ public class LoginActivity extends AppCompatActivity  {
             finish();
         }else {
             Toast.makeText(this, "email and password is incorrect", Toast.LENGTH_LONG).show();
+
+            Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            vibrator.vibrate(50);
             etEmail.requestFocus();
+
         }
     }
 

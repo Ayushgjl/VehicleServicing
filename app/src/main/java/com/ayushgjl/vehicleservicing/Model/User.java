@@ -1,44 +1,50 @@
 package com.ayushgjl.vehicleservicing.Model;
 
-public class User {
-    private String firstname;
-    private String lastname;
-    private String PhoneNumber;
+import java.io.Serializable;
+
+public class User implements Serializable {
+    private String firstName;
+    private String lastName;
+    private String phonenumber;
     private String username;
     private String password;
     private String image;
 
-    public User(String firstname, String lastname, String phoneNumber, String username, String password, String image) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        PhoneNumber = phoneNumber;
+    public User(String firstName, String lastName, String phonenumber, String username, String password, String image) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phonenumber = phonenumber;
         this.username = username;
         this.password = password;
         this.image = image;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public User() {
+
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getPhoneNumber() {
-        return PhoneNumber;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        PhoneNumber = phoneNumber;
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
     }
 
     public String getUsername() {

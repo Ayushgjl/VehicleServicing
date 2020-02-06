@@ -7,4 +7,67 @@
     android:orientation="vertical"
     tools:context=".UpdateActivity">
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Update Here !"
+        android:gravity="center_horizontal"
+        android:textColor="#D81B60"
+        android:fontFamily="Bold"/>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/UpdateImage"
+        android:layout_width="222dp"
+        android:layout_height="163dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/camera" />
+
+    <EditText
+        android:id="@+id/tvFirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Firstname"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/tvLast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lastname"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/tvPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone number"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/tvUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="update"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:background="@drawable/buttonblue"/>
+
 </LinearLayout>

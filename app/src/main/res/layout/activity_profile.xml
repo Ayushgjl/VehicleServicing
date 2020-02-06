@@ -71,7 +71,7 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/update"
         android:background="@drawable/buttonblue"
         android:layout_width="227dp"
         android:layout_height="wrap_content"

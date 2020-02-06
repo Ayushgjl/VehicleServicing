@@ -15,11 +15,19 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.ayushgjl.vehicleservicing.API.BikeBookingAPI;
+import com.ayushgjl.vehicleservicing.Model.BikeBooking;
+import com.ayushgjl.vehicleservicing.URL.url;
 import com.ayushgjl.vehicleservicing.createchannel.CreateChannel;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BikeActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     private NotificationManagerCompat notificationManagerCompat;
@@ -98,8 +106,13 @@ public class BikeActivity extends AppCompatActivity implements DatePickerDialog.
                     btnbtime.setError("Please enter time");
                     return;
                 }
+                else{
+                    registerbikebooking();
+                }
             }
-        });        btnbdate.setOnClickListener(new View.OnClickListener() {
+        });
+
+        btnbdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadDatePicker();
@@ -111,6 +124,42 @@ public class BikeActivity extends AppCompatActivity implements DatePickerDialog.
                 loadTime();
             }
         });
+
+
+    }
+
+    private void registerbikebooking() {
+
+        String fullname=bfullname.getText().toString();
+        String contact=bcontact.getText().toString();
+        String location=blocation.getText().toString();
+        String bikenumber=bvehiclenum.getText().toString();
+        String problem=bproblem.getText().toString();
+        String model=bspin.getSelectedItem().toString();
+        String type=bspin1.getSelectedItem().toString();
+        String date=btnbdate.getText().toString();
+        String time=btnbtime.getText().toString();
+
+        BikeBooking bikeBooking=new BikeBooking(fullname,contact,location,bikenumber,problem,model,type,date,time);
+
+        BikeBookingAPI bikeBookingAPI= url.getInstance().create(BikeBookingAPI.class);
+        Call<BikeBooking> bikeBookingCall=bikeBookingAPI.registerbiekbooking(bikeBooking);
+bikeBookingCall.enqueue(new Callback<BikeBooking>() {
+    @Override
+    public void onResponse(Call<BikeBooking> call, Response<BikeBooking> response) {
+        if (!response.isSuccessful()){
+            Toast.makeText(BikeActivity.this, "Error : API is not responding " + response.code(), Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Toast.makeText(BikeActivity.this, "Bike Booked", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onFailure(Call<BikeBooking> call, Throwable t) {
+        Toast.makeText(BikeActivity.this, "Error : Network Problem  and Error : " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+    }
+});
+
 
     }
 
