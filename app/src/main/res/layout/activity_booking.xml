@@ -19,7 +19,7 @@
         />
 
     <EditText
-        android:id="@+id/fullname"
+        android:id="@+id/cfullname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Full Name"
@@ -28,7 +28,7 @@
 
 
     <EditText
-        android:id="@+id/contact"
+        android:id="@+id/ccontact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
@@ -37,14 +37,14 @@
         />
 
     <EditText
-        android:id="@+id/location"
+        android:id="@+id/clocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Your Location"
 
         />
     <EditText
-        android:id="@+id/vehiclenum"
+        android:id="@+id/cvehiclenum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Your Car Number "
@@ -52,7 +52,7 @@
         />
 
     <EditText
-        android:id="@+id/problem"
+        android:id="@+id/cproblem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Problems On your Car"
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/servicingtype"
+            android:id="@+id/cservicingtype"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Select Your Servicing"
@@ -115,7 +115,7 @@
 
 
         <Button
-            android:id="@+id/btndate"
+            android:id="@+id/btncdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/buttonblue"
@@ -124,7 +124,7 @@
 
 
         <Button
-            android:id="@+id/btntime"
+            android:id="@+id/btnctime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30sp"
@@ -136,7 +136,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnbook"
+        android:id="@+id/btncbook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5sp"

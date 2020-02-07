@@ -26,36 +26,5 @@ public class MainActivity extends WearableActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
-        CreateChannel channel = new CreateChannel(this);
-        channel.createChannel();
-
-        login = (TextView) findViewById(R.id.text);
-        etemail = (EditText) findViewById(R.id.etemail);
-        etpw = (EditText) findViewById(R.id.etpw);
-        btnlogin = (Button) findViewById(R.id.btnlogin);
-
-        btnlogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                counter+=counter+1;
-                DisplayNotification();
-            }
-        });
-
-
-        // Enables Always-on
-        setAmbientEnabled();
-    }
-
-    private void DisplayNotification() {
-        Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
-                .setSmallIcon(R.drawable.ic_border_all_black_24dp)
-                .setContentTitle("First Notification")
-                .setContentText("Succesfully Booked")
-                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
-                .build();
-
-        notificationManagerCompat.notify(counter, notification);
     }
 }

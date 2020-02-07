@@ -73,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="204dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/car2" />
+            android:src="@drawable/bike1" />
 
 
             <TextView
@@ -106,7 +106,7 @@
                 android:id="@+id/loc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="95sp"
+                android:layout_marginLeft="80sp"
                 android:layout_marginTop="15sp"
                 android:text="Dillibazar, Kathmandu"
                 android:textSize="20sp" />

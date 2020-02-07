@@ -6,8 +6,10 @@ import androidx.core.app.NotificationManagerCompat;
 
 import android.app.DatePickerDialog;
 import android.app.Notification;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,20 +17,29 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
+import com.ayushgjl.vehicleservicing.API.CarBookingAPI;
+import com.ayushgjl.vehicleservicing.Model.CarBooking;
+import com.ayushgjl.vehicleservicing.URL.url;
 import com.ayushgjl.vehicleservicing.createchannel.CreateChannel;
 
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class BookingActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     private NotificationManagerCompat notificationManagerCompat;
     private int counter = 1;
-    private EditText fullname, contact, location, vehiclenum, problem;
+    private EditText cfullname, ccontact, clocation, cvehiclenum, cproblem;
     private Spinner spin, spin1, spin2;
     private TextView vehicletype, cartype, servicingtype, date, time;
-    private Button btndate, btntime, btnbook;
+    private Button btncdate, btnctime, btncbook;
     int y1, m1, d1;
 
 
@@ -42,22 +53,22 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
         CreateChannel channel = new CreateChannel(this);
         channel.createChannel();
 
-        fullname = findViewById(R.id.fullname);
-        contact = findViewById(R.id.contact);
-        location = findViewById(R.id.location);
-        vehiclenum = findViewById(R.id.vehiclenum);
-        problem = findViewById(R.id.problem);
+        cfullname = findViewById(R.id.cfullname);
+        ccontact = findViewById(R.id.ccontact);
+        clocation = findViewById(R.id.clocation);
+        cvehiclenum = findViewById(R.id.cvehiclenum);
+        cproblem = findViewById(R.id.cproblem);
         spin = findViewById(R.id.spin);
         spin1 = findViewById(R.id.spin1);
         spin2 = findViewById(R.id.spin2);
         vehicletype = findViewById(R.id.vehicletype);
         cartype = findViewById(R.id.cartype);
-        servicingtype = findViewById(R.id.servicingtype);
+        servicingtype = findViewById(R.id.cservicingtype);
         date = findViewById(R.id.date);
         time = findViewById(R.id.time);
-        btndate = findViewById(R.id.btndate);
-        btntime = findViewById(R.id.btntime);
-        btnbook = findViewById(R.id.btnbook);
+        btncdate = findViewById(R.id.btncdate);
+        btnctime = findViewById(R.id.btnctime);
+        btncbook = findViewById(R.id.btncbook);
 
         String model[] = {"SUVs", "Sedans", "Sports", "Wagons", "Luxury", "Hybrids/EVs"};
 
@@ -78,37 +89,41 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
 
         spin2.setAdapter(arrayAdapter2);
 
-        btnbook.setOnClickListener(new View.OnClickListener() {
+        btncbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 counter+=counter+1;
-                if(TextUtils.isEmpty(fullname.getText())){
-                    fullname.setError("Please enter your fullname");
+                if(TextUtils.isEmpty(cfullname.getText())){
+                    cfullname.setError("Please enter your fullname");
                     return;
                 }
-                else if(TextUtils.isEmpty(contact.getText())){
-                    contact.setError("Please enter your contact number");
+                else if(TextUtils.isEmpty(ccontact.getText())){
+                    ccontact.setError("Please enter your contact number");
                     return;
                 }
-                else if(TextUtils.isEmpty(location.getText())){
-                    location.setError("Please enter your location");
+                else if(TextUtils.isEmpty(clocation.getText())){
+                    clocation.setError("Please enter your location");
                     return;
                 }
-                else if(TextUtils.isEmpty(vehiclenum.getText())){
-                    vehiclenum.setError("Please enter your vehiclenum");
+                else if(TextUtils.isEmpty(cvehiclenum.getText())){
+                    cvehiclenum.setError("Please enter your vehiclenum");
                     return;
                 }
-                else if(TextUtils.isEmpty(problem.getText())){
-                    problem.setError("Please enter problem on vehicle");
+                else if(TextUtils.isEmpty(cproblem.getText())){
+                    cproblem.setError("Please enter problem on vehicle");
                     return;
                 }
-                else if(TextUtils.isEmpty(btndate.getText())){
-                    btndate.setError("Please enter date");
+                else if(TextUtils.isEmpty(btncdate.getText())){
+                    btncdate.setError("Please enter date");
                     return;
                 }
-                else if(TextUtils.isEmpty(btntime.getText())){
-                    btntime.setError("Please enter time");
+                else if(TextUtils.isEmpty(btnctime.getText())){
+                    btnctime.setError("Please enter time");
                     return;
+                }
+
+                else {
+                    registercarbooking();
                 }
 
          DisplayNotification();
@@ -118,13 +133,13 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
             }
         });
 
-        btndate.setOnClickListener(new View.OnClickListener() {
+        btncdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadDatePicker();
             }
         });
-        btntime.setOnClickListener(new View.OnClickListener() {
+        btnctime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadTime();
@@ -132,13 +147,48 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
         });
     }
 
+    private void registercarbooking() {
+        String fullname=cfullname.getText().toString();
+        String contact=ccontact.getText().toString();
+        String location=clocation.getText().toString();
+        String vehiclenum=cvehiclenum.getText().toString();
+        String problem=cproblem.getText().toString();
+        String model=spin.getSelectedItem().toString();
+        String type=spin1.getSelectedItem().toString();
+        String servicing = spin2.getSelectedItem().toString();
+        String date=btncdate.getText().toString();
+        String time=btnctime.getText().toString();
+
+        CarBooking carBooking=new CarBooking(fullname,contact,location,vehiclenum,problem,model,type,servicing,date,time);
+
+        CarBookingAPI carBookingAPI= url.getInstance().create(CarBookingAPI.class);
+        Call<CarBooking> carBookingCall=carBookingAPI.registercarbooking(carBooking);
+        carBookingCall.enqueue(new Callback<CarBooking>() {
+            @Override
+            public void onResponse(Call<CarBooking> call, Response<CarBooking> response) {
+                if (! response.isSuccessful()) {
+                    Toast.makeText(BookingActivity.this, "Error : API is not responding " + response.code(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Toast.makeText(BookingActivity.this, "Car Booked", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<CarBooking> call, Throwable t) {
+                    Toast.makeText(BookingActivity.this, "Error : Network Problem  and Error : " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+            }
+
+
+
 
 
 
     private void DisplayNotification() {
         Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
                 .setSmallIcon(R.drawable.ic_border_all_black_24dp)
-                .setContentTitle("First Notification")
+                .setContentTitle("Notification")
                 .setContentText("Succesfully Booked")
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();
@@ -151,7 +201,7 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
         final Calendar calendar = Calendar.getInstance();
         SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
         String time = "Current Time:" + format.format(calendar.getTime());
-        btntime.setText(time);
+        btnctime.setText(time);
 
 
 
@@ -159,13 +209,19 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
     }
 
     private void loadDatePicker() {
-        final Calendar c = Calendar.getInstance();
-        int year=c.get(Calendar.YEAR);
-        int month=c.get(Calendar.MONTH);
-        final int day = c.get(Calendar.DAY_OF_MONTH);
+        Calendar calendar = Calendar.getInstance();
+        int HOUR = calendar.get(Calendar.HOUR);
+        int Minute = calendar.get(Calendar.MINUTE);
 
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this, this, year, month, day);
-        datePickerDialog.show();
+        boolean is24HourFormat = DateFormat.is24HourFormat(this);
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                String timeString = "hour:" + hourOfDay + "minute :" + minute;
+                btnctime.setText(timeString);
+            }
+        }, HOUR,Minute,is24HourFormat);
+        timePickerDialog.show();
     }
 
     @Override
@@ -175,7 +231,7 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
         m1= month;
         d1= dayOfMonth;
 
-        btndate.setText(date);
+        btncdate.setText(date);
 
     }
 

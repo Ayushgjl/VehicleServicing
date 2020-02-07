@@ -1,5 +1,10 @@
 package com.ayushgjl.vehicleservicing;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,8 +25,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.view.WindowManager;
+import android.widget.TextView;
 
 public class Main2Activity extends AppCompatActivity {
+    TextView ProximitySensor,data;
+    SensorManager mysensorManager;
+    Sensor myproximitySensor;
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -51,6 +61,18 @@ public class Main2Activity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        ProximitySensor = (TextView) findViewById(R.id.proximitySensor);
+        data = (TextView) findViewById(R.id.data);
+        mysensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        myproximitySensor = mysensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        if (myproximitySensor == null) {
+            ProximitySensor.setText("No Proximity Sensor!");
+
+        } else {
+            mysensorManager.registerListener(proximitySensorEventListener,
+                    myproximitySensor,
+                    SensorManager.SENSOR_DELAY_NORMAL);
+        }
     }
 
     @Override
@@ -66,4 +88,31 @@ public class Main2Activity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+    SensorEventListener proximitySensorEventListener
+            = new SensorEventListener() {
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+            // TODO Auto-generated method stub
+        }
+        @Override
+        public void onSensorChanged(SensorEvent event) {
+            WindowManager.LayoutParams params = Main2Activity.this.getWindow().getAttributes();
+            if(event.sensor.getType()==Sensor.TYPE_PROXIMITY){
+
+                if(event.values[0]==0){
+                    params.flags |= WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
+                    params.screenBrightness = 0;
+                    getWindow().setAttributes(params);
+                }
+                else{
+                    params.flags |= WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
+                    params.screenBrightness = -1f;
+                    getWindow().setAttributes(params);
+                }
+            }
+        }
+    };
 }
+
+
+

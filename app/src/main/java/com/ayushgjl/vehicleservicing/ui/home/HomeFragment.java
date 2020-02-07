@@ -41,7 +41,7 @@ public class HomeFragment extends Fragment {
             viewPager.setCurrentItem(position,true);
             if(position>=PAGE_NUM) position=0;
             else position++;
-            handler.postDelayed(runnable,3000);
+            handler.postDelayed(runnable,2000);
         }
     };
 

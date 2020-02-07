@@ -6,8 +6,10 @@ import androidx.core.app.NotificationManagerCompat;
 
 import android.app.DatePickerDialog;
 import android.app.Notification;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,6 +17,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.ayushgjl.vehicleservicing.API.BikeBookingAPI;
@@ -176,10 +179,20 @@ bikeBookingCall.enqueue(new Callback<BikeBooking>() {
 
     private void loadTime() {
 
-        final Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
-        String time = "Current Time:" + format.format(calendar.getTime());
-        btnbtime.setText(time);
+        Calendar calendar = Calendar.getInstance();
+        int HOUR = calendar.get(Calendar.HOUR);
+        int Minute = calendar.get(Calendar.MINUTE);
+
+        boolean is24HourFormat = DateFormat.is24HourFormat(this);
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                String timeString = "hour:" + hourOfDay + "minute :" + minute;
+                btnbtime.setText(timeString);
+            }
+        }, HOUR,Minute,is24HourFormat);
+        timePickerDialog.show();
+
     }
 
     private void loadDatePicker() {
