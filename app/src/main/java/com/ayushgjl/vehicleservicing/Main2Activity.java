@@ -27,11 +27,12 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity {
-    TextView ProximitySensor,data;
-    SensorManager mysensorManager;
-    Sensor myproximitySensor;
+//    TextView ProximitySensor,data;
+//    SensorManager mysensorManager;
+//    Sensor myproximitySensor;
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -61,19 +62,45 @@ public class Main2Activity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        ProximitySensor = (TextView) findViewById(R.id.proximitySensor);
-        data = (TextView) findViewById(R.id.data);
-        mysensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        myproximitySensor = mysensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-        if (myproximitySensor == null) {
-            ProximitySensor.setText("No Proximity Sensor!");
 
-        } else {
-            mysensorManager.registerListener(proximitySensorEventListener,
-                    myproximitySensor,
-                    SensorManager.SENSOR_DELAY_NORMAL);
-        }
+//        setTitle("Light Sensor");
+//        LightInstance();
+
+
+//        ProximitySensor = (TextView) findViewById(R.id.proximitySensor);
+//        data = (TextView) findViewById(R.id.data);
+//        mysensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+//        myproximitySensor = mysensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+//        if (myproximitySensor == null) {
+//            ProximitySensor.setText("No Proximity Sensor!");
+//
+//        } else {
+//            mysensorManager.registerListener(proximitySensorEventListener,
+//                    myproximitySensor,
+//                    SensorManager.SENSOR_DELAY_NORMAL);
+//        }
     }
+
+//    private void LightInstance() {
+//
+//        mysensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+//        Sensor sensor = mysensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+//        SensorEventListener lightlistener = new SensorEventListener() {
+//            @Override
+//            public void onSensorChanged(SensorEvent event) {
+//                if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
+//                    Toast.makeText(Main2Activity.this, "onSenor Change :"+ event.values[0], Toast.LENGTH_SHORT).show();
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+//
+//            }
+//        };
+//        mysensorManager.registerListener(lightlistener,sensor,SensorManager.SENSOR_DELAY_NORMAL);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -88,30 +115,30 @@ public class Main2Activity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-    SensorEventListener proximitySensorEventListener
-            = new SensorEventListener() {
-        @Override
-        public void onAccuracyChanged(Sensor sensor, int accuracy) {
-            // TODO Auto-generated method stub
-        }
-        @Override
-        public void onSensorChanged(SensorEvent event) {
-            WindowManager.LayoutParams params = Main2Activity.this.getWindow().getAttributes();
-            if(event.sensor.getType()==Sensor.TYPE_PROXIMITY){
-
-                if(event.values[0]==0){
-                    params.flags |= WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
-                    params.screenBrightness = 0;
-                    getWindow().setAttributes(params);
-                }
-                else{
-                    params.flags |= WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
-                    params.screenBrightness = -1f;
-                    getWindow().setAttributes(params);
-                }
-            }
-        }
-    };
+//    SensorEventListener proximitySensorEventListener
+//            = new SensorEventListener() {
+//        @Override
+//        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+//            // TODO Auto-generated method stub
+//        }
+//        @Override
+//        public void onSensorChanged(SensorEvent event) {
+//            WindowManager.LayoutParams params = Main2Activity.this.getWindow().getAttributes();
+//            if(event.sensor.getType()==Sensor.TYPE_PROXIMITY){
+//
+//                if(event.values[0]==0){
+//                    params.flags |= WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
+//                    params.screenBrightness = 0;
+//                    getWindow().setAttributes(params);
+//                }
+//                else{
+//                    params.flags |= WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
+//                    params.screenBrightness = -1f;
+//                    getWindow().setAttributes(params);
+//                }
+//            }
+//        }
+//    };
 }
 
 

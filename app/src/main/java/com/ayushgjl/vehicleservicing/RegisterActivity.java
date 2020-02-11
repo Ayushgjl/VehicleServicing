@@ -1,9 +1,11 @@
 package com.ayushgjl.vehicleservicing;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.Window;
@@ -89,6 +91,9 @@ public class RegisterActivity extends AppCompatActivity {
                     etPassword.requestFocus();
                     return;
                 }
+
+//                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+//                vibrator.vibrate(50);
             }
         });
     }

@@ -198,17 +198,6 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
     }
 
     private void loadTime() {
-        final Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
-        String time = "Current Time:" + format.format(calendar.getTime());
-        btnctime.setText(time);
-
-
-
-
-    }
-
-    private void loadDatePicker() {
         Calendar calendar = Calendar.getInstance();
         int HOUR = calendar.get(Calendar.HOUR);
         int Minute = calendar.get(Calendar.MINUTE);
@@ -222,6 +211,20 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
             }
         }, HOUR,Minute,is24HourFormat);
         timePickerDialog.show();
+
+
+
+
+    }
+
+    private void loadDatePicker() {
+        final Calendar c = Calendar.getInstance();
+        int year=c.get(Calendar.YEAR);
+        int month=c.get(Calendar.MONTH);
+        final int day = c.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, this, year, month, day);
+        datePickerDialog.show();
     }
 
     @Override

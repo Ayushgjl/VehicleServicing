@@ -169,7 +169,7 @@ bikeBookingCall.enqueue(new Callback<BikeBooking>() {
     private void DisplayNotification() {
         Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_2)
                 .setSmallIcon(R.drawable.ic_phone_android_black_24dp)
-                .setContentTitle("Second Message")
+                .setContentTitle("Notification")
                 .setContentText("Second Message body")
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();
