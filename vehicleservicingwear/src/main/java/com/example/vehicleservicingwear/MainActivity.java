@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
 import com.example.vehicleservicingwear.URL.url;
 import com.example.vehicleservicingwear.strictmode.StrictModeClass;
 
@@ -38,11 +41,15 @@ public class MainActivity extends WearableActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 login();
+
             }
         });
         setAmbientEnabled();
     }
+
+
 
     private void login() {
 
